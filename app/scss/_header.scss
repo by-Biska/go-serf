@@ -1,9 +1,208 @@
 .header {
+    position: relative;
+    height: 100vh;
     &__slider-item {
         height: 100vh;
-        background-image: url('../images/header-bg.jpg');
+        background-image: url("../images/header-bg.jpg");
         background-repeat: no-repeat;
         background-size: cover;
         background-position: center;
     }
+}
+
+.header__aside {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 5;
+    border-right: 1px solid rgba(#fff, 0.25);
+    height: 100vh;
+    text-align: center;
+}
+.header__title {
+    @extend %font-extrabold;
+    font-size: 200px;
+    line-height: 156px;
+    max-width: 467px;
+    color: rgba(#fff, 0.07);
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 4;
+}
+
+.menu {
+    margin-top: 35px;
+    &__item {
+        margin-bottom: 37px;
+    }
+    &__item-title {
+        @extend %font-medium;
+        font-size: 12px;
+        line-height: 14px;
+        letter-spacing: 3px;
+        display: block;
+        text-transform: capitalize;
+    }
+}
+.date {
+    margin-bottom: 30px;
+    margin-top: 16px;
+    &__day {
+        @extend %font-extrabold;
+        font-size: 72px;
+        line-height: 64px;
+        display: block;
+        margin-bottom: 10px;
+    }
+    &__month,
+    &__character,
+    &__year {
+        @extend %font-light;
+        line-height: 19px;
+        letter-spacing: 1.4px;
+    }
+}
+.header__location {
+    @extend %font-light;
+    display: inline-block;
+    font-size: 12px;
+    line-height: 14px;
+    letter-spacing: 1.05px;
+    position: relative;
+    padding-left: 19px;
+    text-transform: capitalize;
+    &::before {
+        content: '';
+        position: absolute;
+        background-image: url(../images/marker.svg);
+        width: 11px;
+        height: 13px;
+        left: 0;
+        top: 0;
+    }
+}
+
+.slider-item {
+    position: relative;
+    &__info {
+        position: absolute;
+        right: 80px;
+        bottom: 116px;
+        text-align: right;
+    }
+    &__info-title {
+        @extend %font-extrabold;
+        font-size: 80px;
+        line-height: 86px;
+        margin-bottom: 48px;
+    }
+    &__info-subtitle {
+        margin-bottom: 5px;
+    }
+    &__info-subtext {
+        margin-bottom: 8px;
+    }
+    &__info-text {
+        @extend %font-extrabold;
+        font-size: 40px;
+        line-height: 46px;
+        margin-bottom: 20px;
+    }
+    &__info-arrow {
+        display: inline-block;
+        padding: 5px;
+        transition: background-color 0.2s;
+        cursor: pointer;
+        background-color: transparent;
+        border: none;
+        &:hover {
+            background-color: $green;
+        }
+    }
+}
+
+.slider-arrows {
+    position: absolute;
+    top: 40px;
+    right: 75px;
+    cursor: pointer;
+    z-index: 4;
+    padding: 5px;
+    transition: background-color 0.2s;
+    &:hover {
+        background-color: $green;
+    }
+}
+.slider-arrows__left {
+    right: 125px;
+}
+
+.slider-dotshead {
+    position: absolute;
+    right: 50px;
+    bottom: 36px;
+    max-width: 920px;
+    width: 100%;
+    color: #fff;
+}
+.slick-current {
+    .dots-box {
+        border-top: 4px solid $green;
+    }
+}
+.dots-box {
+    width: 200px;
+    display: flex;
+    justify-content: space-between;
+    height: 44px;
+    align-items: center;
+    padding-top: 8px;
+    border-top: 4px solid #fff;
+    transition: all 0.5s;
+    cursor: pointer;
+    &:hover {
+        border-color: $green;
+        color: $green;
+    }
+    &__number {
+        font-size: 24px;
+        line-height: 34px;
+    }
+    &__name {
+        @extend %font-light;
+        line-height: 19px;
+        text-transform: capitalize;
+    }
+}
+.slider-dots__item:hover {
+    .slider-dots {
+        color: $green;
+    }
+}
+
+.header__map {
+    position: absolute;
+    right: 0;
+    top: 0;
+    z-index: 3;
+}
+
+.header__scrollbtn {
+    position: absolute;
+    left: 210px;
+    bottom: 40px;
+    z-index: 3;
+}
+
+.line-animation {
+    stroke-dashoffset: 600;
+    stroke-dasharray: 600;
+    animation: animdash 5s infinite 6s;
+}
+
+@keyframes animdash {
+to {
+    stroke-dashoffset: 0;
+}
 }

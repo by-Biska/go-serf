@@ -3,7 +3,7 @@
   font-weight: 300;
 }
 
-.surf-box__inner-location, .headline-left {
+.holder-slider__info-title .holder-pricing__span, .holder-slider__info-subtitle, .surf-box__inner-location, .headline-right, .headline-left {
   font-family: "Fira Sans", sans-serif;
   font-weight: 400;
 }
@@ -3956,6 +3956,25 @@ body {
   top: 50%;
 }
 
+.headline-right {
+  font-size: 22px;
+  line-height: 32px;
+  letter-spacing: 7.33333px;
+  color: rgba(255, 255, 255, 0.5);
+  position: relative;
+  padding-right: 103px;
+  display: inline-block;
+}
+.headline-right::before {
+  content: "";
+  position: absolute;
+  width: 80px;
+  height: 1px;
+  background-color: rgba(255, 255, 255, 0.5);
+  right: 0;
+  top: 50%;
+}
+
 .title span {
   font-size: 200px;
   color: rgba(255, 255, 255, 0.02);
@@ -3987,10 +4006,16 @@ body {
 .subtitle__head {
   font-size: 40px;
   padding-right: 9px;
-  font-weight: 800;
 }
 .subtitle__head span {
   font-weight: 100;
+}
+
+.descr {
+  padding-left: 5px;
+}
+.descr__head {
+  font-size: 40px;
 }
 
 .btn {
@@ -4022,6 +4047,73 @@ body {
   right: 17px;
   top: 50%;
   transform: translateY(-50%);
+}
+
+.surf,
+.holder {
+  padding: 160px 0 120px;
+}
+
+.holder {
+  padding-bottom: 265px;
+  margin-bottom: 35px;
+}
+
+.quantity {
+  display: inline-block;
+}
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+.quantity input {
+  width: 45px;
+  height: 42px;
+  display: block;
+  border: none;
+  background-color: transparent;
+  color: #fff;
+  font-size: 40px;
+  line-height: 36px;
+}
+
+.quantity input:focus {
+  outline: 0;
+}
+
+.quantity-nav {
+  float: left;
+  position: static;
+  height: 42px;
+}
+
+.quantity-button {
+  position: relative;
+  cursor: pointer;
+  width: 20px;
+  height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  top: 43px;
+}
+
+.quantity-button.quantity-up {
+  position: absolute;
+  right: 0;
+}
+
+.quantity-button.quantity-down {
+  position: absolute;
+  right: 25px;
+  color: #4AF6CD;
 }
 
 .header {
@@ -4226,7 +4318,6 @@ body {
   }
 }
 .surf {
-  padding: 160px 0 120px;
   background-image: url("../images/surf-bg.png");
   background-position: right 200px;
   background-repeat: no-repeat;
@@ -4249,7 +4340,7 @@ body {
 }
 .surf-slider .slider-arrows {
   top: 50px;
-  opacity: 0.25;
+  opacity: 0.5;
 }
 .surf-slider .slick-slide:nth-child(4n+1) .surf-box {
   margin-top: 32px;
@@ -4460,4 +4551,96 @@ body {
 .slider-dots.slider-dots--8 .slider-dots__content::before {
   right: 0;
   left: auto;
+}
+
+.holder {
+  background-image: url(../images/travel-bg.png);
+  background-position: bottom right;
+  background-repeat: no-repeat;
+}
+.holder.sleep {
+  background-image: url(../images/flower.png);
+}
+.holder .slider-arrows {
+  top: 225px;
+  opacity: 0.5;
+}
+
+.holder-slider__head {
+  background-repeat: no-repeat;
+  background-position: top left;
+  min-height: 780px;
+}
+.holder-slider__descr {
+  padding: 212px 0 0px 132px;
+  margin-top: -18%;
+  padding-left: 132px;
+  background-repeat: no-repeat;
+  background-position: right center;
+  min-height: 320px;
+  background-size: contain;
+}
+.holder-slider__descr .descr__head {
+  margin-right: 78px !important;
+}
+.holder-slider__descr .descr__head-img {
+  padding-left: 10px;
+  display: inline !important;
+}
+.holder-slider__descr .holder__star-list {
+  display: inline;
+}
+.holder-slider__descr .holder__star-list li {
+  margin-left: -25px;
+  transform: translate(50%, 25%);
+  display: inline-block !important;
+}
+.holder-slider__subtitle {
+  text-align: right;
+  padding-right: 80px;
+  padding-top: 112px;
+}
+.holder-slider__btn {
+  text-align: center;
+}
+
+.holder-slider__info {
+  margin-top: 120px;
+  display: flex;
+  justify-content: space-around;
+}
+.holder-slider__info-item {
+  min-height: 200px;
+  margin-bottom: 66px;
+  position: relative;
+}
+.holder-slider__info-subtitle {
+  position: absolute;
+  font-size: 18px;
+  line-height: 22px;
+  letter-spacing: 8px;
+  color: rgba(255, 255, 255, 0.5);
+  transform: rotate(-90deg);
+  top: 97px;
+  left: -97px;
+  width: 200px;
+  height: 0;
+  white-space: nowrap;
+  text-align: right;
+}
+.holder-slider__info-title {
+  font-size: 40px;
+  line-height: 36px;
+  padding-left: 40px;
+  position: relative;
+}
+.holder-slider__info-title .holder-pricing__span {
+  position: absolute;
+  font-size: 14px;
+  line-height: 0;
+  text-align: right;
+  letter-spacing: 5.25px;
+  color: rgba(255, 255, 255, 0.75);
+  right: 0;
+  bottom: -9px;
 }

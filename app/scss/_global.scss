@@ -41,6 +41,25 @@ body {
 		top: 50%;
 	}
 }
+.headline-right {
+	@extend %font-regular;
+	font-size: 22px;
+	line-height: 32px;
+	letter-spacing: 7.33333px;
+	color: rgba(#fff, 0.5);
+	position: relative;
+	padding-right: 103px;
+	display: inline-block;
+	&::before {
+		content: "";
+		position: absolute;
+		width: 80px;
+		height: 1px;
+		background-color: rgba(#fff, 0.5);
+		right: 0;
+		top: 50%;
+	}
+}
 
 .title {
 	span {
@@ -74,10 +93,16 @@ body {
 	&__head {
 		font-size: 40px;
 		padding-right: 9px;
-		font-weight: 800;
 		span {
 			font-weight: 100;
 		}
+	}
+}
+
+.descr {
+	padding-left: 5px;
+	&__head {
+		font-size: 40px;
 	}
 }
 
@@ -111,3 +136,13 @@ body {
 		}
 	}
 }
+
+.surf,
+.holder {
+	padding: 160px 0 120px;
+}
+.holder {
+	padding-bottom: 265px;
+	margin-bottom: 35px;
+}
+

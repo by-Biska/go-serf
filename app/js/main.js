@@ -43,7 +43,7 @@ $(function () {
     focusOnSelect: true,
   });
 
-  $(".holder__slider").slick({
+  $(".holder__slider, .shop__slider").slick({
     infinite: true,
     fade: true,
     prevArrow:
@@ -51,6 +51,8 @@ $(function () {
     nextArrow:
       '<img class="slider-arrows slider-arrows__right" src="images/arrow-right.svg" alt="">',
   });
+
+
 
   // Date
   var d = new Date();
@@ -66,7 +68,7 @@ $(function () {
   }
   $(".date__year").text(d.getFullYear());
 
-  // PLUS / MINUS
+  // Calculator
   $(
     '<div class="quantity-nav"><div class="quantity-button quantity-up"><img src="images/plus.svg"></div><div class="quantity-button quantity-down"><img src="images/minus.svg"></div></div>'
   ).insertAfter(".quantity input");
@@ -102,16 +104,20 @@ $(function () {
   });
 
   $(".quantity-button").on("click", function () {
-    let summ =
-      $(".nights").val() * $(".summ").data("nights") +
-      ($(".guests").val() - 1) * $(".summ").data("guests");
-
-    $(".summ").html(summ);
+    var parents = $(this).parents('.holder-slider__info');
+    let summ = $('.summ', parents).data('nights') * $('.nights', parents).val() + $('.summ', parents).data('guests') * $('.guests', parents).val();
+    $('.summ',parents).html(summ)
+    // let summ = ($('.guests').val() * $('.summ').data('nights')) * $('.nights').val();
+    // $('.summ').html(summ.toFixed(1));
   });
 
-  let summ =
-    $(".nights").val() * $(".summ").data("nights") +
-    ($(".guests").val() - 1) * $(".summ").data("guests");
-
-  $(".summ").html(summ);
+  $('.quantity').each(function() {
+    var parents = $(this).parents('.holder-slider__info');
+    let summ = $('.summ', parents).data('nights') * $('.nights', parents).val() + $('.summ', parents).data('guests') 
+    $('.summ',parents).html(summ)
+  })
+  // SHOP
+  $('.surfboard-box__circle').on('click', function() {
+    $(this).toggleClass('active')
+  })
 });

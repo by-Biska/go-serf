@@ -1,4 +1,11 @@
 $(function () {
+  // menu-toggle-btn
+$('.menu-toggle-btn').on("click", function() {
+  $('.header__aside').toggleClass('active')
+  $('.header__slider').toggleClass('opacity-off')
+})
+
+
   // Sliders
   $(".header__slider").slick({
     infinite: true,
@@ -52,8 +59,6 @@ $(function () {
       '<img class="slider-arrows slider-arrows__right" src="images/arrow-right.svg" alt="">',
   });
 
-
-
   // Date
   var d = new Date();
   if (d.getDate() < 10) {
@@ -104,20 +109,24 @@ $(function () {
   });
 
   $(".quantity-button").on("click", function () {
-    var parents = $(this).parents('.holder-slider__info');
-    let summ = $('.summ', parents).data('nights') * $('.nights', parents).val() + $('.summ', parents).data('guests') * $('.guests', parents).val();
-    $('.summ',parents).html(summ)
+    var parents = $(this).parents(".holder-slider__info");
+    let summ =
+      $(".summ", parents).data("nights") * $(".nights", parents).val() +
+      $(".summ", parents).data("guests") * $(".guests", parents).val();
+    $(".summ", parents).html(summ);
     // let summ = ($('.guests').val() * $('.summ').data('nights')) * $('.nights').val();
     // $('.summ').html(summ.toFixed(1));
   });
 
-  $('.quantity').each(function() {
-    var parents = $(this).parents('.holder-slider__info');
-    let summ = $('.summ', parents).data('nights') * $('.nights', parents).val() + $('.summ', parents).data('guests') 
-    $('.summ',parents).html(summ)
-  })
+  $(".quantity").each(function () {
+    var parents = $(this).parents(".holder-slider__info");
+    let summ =
+      $(".summ", parents).data("nights") * $(".nights", parents).val() +
+      $(".summ", parents).data("guests");
+    $(".summ", parents).html(summ);
+  });
   // SHOP
-  $('.surfboard-box__circle').on('click', function() {
-    $(this).toggleClass('active')
-  })
+  $(".surfboard-box__circle").on("click", function () {
+    $(this).toggleClass("active");
+  });
 });

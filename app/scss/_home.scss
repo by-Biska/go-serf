@@ -36,9 +36,11 @@
     }
 }
 .surf-box {
-    background-position: center;
+    &__wrapper{
+        background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
+    }
     &:hover {
         .surf-box__inner-btn {
             opacity: 1;
@@ -429,6 +431,9 @@
 
 .surfboard {
     position: relative;
+    &__img {
+        max-width: none;
+    }
 }
 .surfboard-box {
     position: absolute;

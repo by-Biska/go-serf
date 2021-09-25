@@ -39,11 +39,61 @@ $('.menu-toggle-btn').on("click", function() {
     nextArrow:
       '<img class="slider-arrows slider-arrows__right" src="images/arrow-right.svg" alt="">',
     asNavFor: ".slider-map",
+    responsive: [
+      {
+        breakpoint: 1760,
+        settings: {
+          slidesToShow: 4,
+        }
+      },
+      {
+        breakpoint: 1410,
+        settings: {
+          slidesToShow: 3,
+        }
+      },
+      {
+        breakpoint: 1079,
+        settings: {
+          slidesToShow: 2.5,
+        }
+      },
+      {
+        breakpoint: 900,
+        settings: {
+          slidesToShow: 2,
+        }
+      },
+      {
+        breakpoint: 723,
+        settings: {
+          slidesToShow: 1.8,
+        }
+      },
+      {
+        breakpoint: 638,
+        settings: {
+          slidesToShow: 1.4,
+        }
+      },
+      {
+        breakpoint: 500,
+        settings: {
+          slidesToShow: 1.05,
+        }
+      },
+      {
+        breakpoint: 400,
+        settings: {
+          slidesToShow: 1.05,
+        }
+      }
+    ]
   });
 
   $(".slider-map").slick({
     slidesToShow: 8,
-    slidesToScroll: 3,
+    slidesToScroll: 1,
     infinite: false,
     arrows: false,
     asNavFor: ".surf-slider",
@@ -129,4 +179,16 @@ $('.menu-toggle-btn').on("click", function() {
   $(".surfboard-box__circle").on("click", function () {
     $(this).toggleClass("active");
   });
+
+
+
+// Resize
+$(window).resize(function () { 
+  if($(window).width() < 610) {
+    $('.holder-slider__descr').attr('style','background-image: none');
+  } else {
+    $('.holder-slider__descr').attr('style','background-image: url(images/virgin.png)');
+  }
+});
+
 });

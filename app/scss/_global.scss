@@ -3,13 +3,18 @@ body {
 	height: 100%;
 }
 
+.wrapper {
+	overflow-x: hidden
+}
+
 body {
 	@extend %font-extrabold;
 	background-color: #171919;
 	color: #fff;
 	position: relative;
-	overflow-x: hidden;
+	overflow-x:hidden;
 	min-width: 300px;
+	width: 100%;
 	font-size: 16px;
 	text-transform: uppercase;
 }

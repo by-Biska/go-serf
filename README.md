@@ -1,2 +1,2 @@
 # go-serf
-link: https://by-biska.github.io/go-surf/app/index
+link: https://by-biska.github.io/go-surf/dist/index

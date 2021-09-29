@@ -65,13 +65,13 @@ function html() {
 
 function styles() {
   return src("app/scss/style.scss")
-    // .pipe(
-    //   autoprefixer({
-    //     overrideBrowserslist: ["last 5 versions"],
-    //     cascade: true,
-    //     grid: true,
-    //   })
-    // )
+    .pipe(
+      autoprefixer({
+        overrideBrowserslist: ["last 5 versions"],
+        cascade: true,
+        grid: true,
+      })
+    )
     .pipe(scss({ outputStyle: "expanded" }).on("error", scss.logError))
     .pipe(dest("app/css"))
     .pipe(

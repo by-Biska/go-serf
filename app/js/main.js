@@ -193,15 +193,6 @@ $(function () {
 });
 //At the document ready event
 $(function () {
-  wow = new WOW(
-    {
-    boxClass:     'wow',      // default
-    animateClass: 'animated', // default
-    offset:       50,        // not default
-    mobile:       true,       // default
-    live:         true        // default
-  }
-  )
-  wow.init();
+  new WOW().init();
 });
 
